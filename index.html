@@ -20,53 +20,86 @@ ul{
 w3-opacity {
   text-align: left;
 }
+
 h2, h3 {
   text-align: center;
+}
+
+h4 {
+  text-decoration: underline;
 }
 
 .w3-round {
   text-align: center;
 }
 
+.mySlides {
+  display: none
+}
 
-.mySlides {display: none}
 
 /* Style the tab */
-.tab {
-  overflow: hidden;
-  border: 1px solid #ccc;
-  background-color: #f1f1f1;
+.tabs{
+    width: 1000px;
+    display: block;
+    margin: 20px auto;
+    position: relative;
+    font: 64;
 }
 
-/* Style the buttons that are used to open the tab content */
-.tab button {
-  background-color: inherit;
-  float: left;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  padding: 14px 16px;
-  transition: 0.3s;
+.tabs .tab{
+    float: left;
+    display: block;
 }
 
-/* Change background color of buttons on hover */
-.tab button:hover {
-  background-color: #ddd;
+.tabs .tab>input[type="radio"] {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
 }
 
-/* Create an active/current tablink class */
-.tab button.active {
-  background-color: #ccc;
+.tabs .tab>label {
+    display: block;
+    padding: 6px 21px;
+    font-size: 12px;
+    text-transform: uppercase;
+    cursor: pointer;
+    position: relative;
+    color: lightgrey;
+    background: black;
 }
 
-/* Style the tab content */
-.tabcontent {
-  display: none;
-  padding: 6px 12px;
-  border: 1px solid #ccc;
-  border-top: none;
+.tabs .content {
+    z-index: 0;/* or display: none; */
+    overflow: hidden;
+    width: 1000px;
+    padding: 25px;
+    position: absolute;
+    top: 27px;
+    left: 0;
+    background: white;
+    color: black;
+    
+    opacity:0;
+    transition: opacity 400ms ease-out;
 }
+
+.tabs>.tab>[id^="tab"]:checked + label {
+    top: 0;
+    background: #303030;
+    color: #F5F5F5;
+}
+
+.tabs>.tab>[id^="tab"]:checked ~ [id^="tab-content"] {
+    z-index: 1;/* or display: block; */
+   
+    opacity: 1;
+    transition: opacity 400ms ease-out;
+}
+
 </style>
+
+
 
 
 </head>
@@ -87,34 +120,36 @@ h2, h3 {
 <div class="w3-content" style="max-width:2000px;margin-top:46px">
 
 
-  <!-- Intro Section -->
-  <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="band">
+<!-- Intro Section -->
+<div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="band">
     <h2 class="w3-wide">Cassidy Day Reiff</h2>
     <p class="w3-opacity"><i>UX Researcher</i></p>
     <p class="w3-justify">A University of California, Irvine cognitive science graduate, I am currently seeking roles as a UX Research Associate. My passion lies in exploring the nuances of human behavior through research. Equipped with a solid foundation in research methodologies and adept interpersonal skills, I aim to provide comprehensive support to teams across project lifecycles. I am excited to discover insightful contributions that propel product innovation and enhance user satisfaction. </p>
-  </div>
+</div>
+
 
   <!-- The Projects Banner -->
    <div class="w3-container w3-content w3-padding-94" style="max-width:2000px">
       <div class="w3-bar w3-black" id="projects">
-      <h2 class="w3-wide w3-center">Find My Projects Below</h2>
+      <h2 class="w3-wide w3-center">Cick through my Projects Below</h2>
     </div>
 
-  <div class="tab">
-  <button class="tablinks" onclick="openCity(event, 'Project1')">Project 1: Thrive Out Loud</button>
-  <button class="tablinks" onclick="openCity(event, 'Project2')">Project 2: Active Wellness App</button>
-</div>
+
+  <!--tab number 1 -->
+  <ul class="tabs">
 
 
-      
   <!-- Project 1 -->
-  <div id="Project1" class="tabcontent">
+  <li class="tab">
+      <input type="radio" name="tabs" checked="checked" id="tab1" />
+      <label for="tab1"> Project1: Active Wellness Center</label>
+    <div id="tab-content1" class="content">
+
 
     <div class="w3-container w3-content  w3-padding-64" style="max-width:800px" id="project1">
       <h2 class="w3-wide">Project 1: Thrive Out Loud</h2>
       <p class="w3-justify">Thrive Out Loud, a platform under development by Sean's Legacy, aims to empower minority LGBTQIA+ youth in their academic and extracurricular pursuits. Serving as a professional mentorship platform, Thrive Out Loud seeks to connect LGBTQ+ mentees with LGBTQ+ mentors who can offer valuable guidance and support. </p>
       <div class="w3-third">
-          <p>The Team!</p>
           <img src="web portfolio/UXRteam.PNG" class="w3-round w3-margin-bottom" alt="Random Name" style="width:300%"> <!-- TOL Pic -->
         </div></p>
 
@@ -157,11 +192,11 @@ h2, h3 {
           <ul>
           <li>Allow TOL users to select multiple response options, ideally without a limit</li>
             <ul>
-              <li>Providing an LGBTQIA+ audience with an elaborate list of identity labels “allows sexual minorities to choose the identity label that best matches their identity” vs not selecting at all ([Gallup](https://news.gallup.com/opinion/methodology/259457/measure-lgbt-population.aspx))</li>
+              <li>Providing an LGBTQIA+ audience with an elaborate list of identity labels “allows sexual minorities to choose the identity label that best matches their identity” vs not selecting at all <a href="https://news.gallup.com/opinion/methodology/259457/measure-lgbt-population.aspx"> (Glaad)</a></li>
             </ul>
           <li>The options of “no label” (gender/sexual orientation), “not sure,” and “not listed (free text)”* have been commonly used across different platforms". These options are fundamentally different from one another and all need to be included </li>
             <ul>
-              <li>“There is no one way to be LGBTQ, nor is there one way to describe LGBTQ people” ([Glaad](https://glaad.org/reference/)). “Not listed (free text)” write in option gives TOL users the ability to further self identify</li>
+              <li>“There is no one way to be LGBTQ, nor is there one way to describe LGBTQ people” <a href="https://glaad.org/reference/"> (Glaad) </a>. “Not listed (free text)” write in option gives TOL users the ability to further self identify</li>
             </ul>
           <li>Support TOL users in their evolving identity: clearly communicate the ability to edit selections</li>
           <li>Consider wording the questions in parallel way for all three identity categories (gender, sexual orientation, ethnicity and race) to reduce cognitive load
@@ -193,13 +228,13 @@ h2, h3 {
  <br><br><br>
        <h3 class="w3-bold"><i>Evaluative Research</i></h3>
          <h4 class="w3-opacity"><i>Heuristic Evaluation</i></h4>
-            <p>To gain a general understanding of the status of the current designs, the team evaluated screens the UXD team provided in [Figma](https://www.figma.com/file/8aPFF08MIEdi4hkYYAtlww/SL-UX-Design-Figma-(Phase-4)?type=design&node-id=200-37255&mode=design&t=BiK8JF42m7bOfgOD-0) against Nielsen Norman Group’s heuristic guidelines.
+            <p>To gain a general understanding of the status of the current designs, the team evaluated screens the UXD team provided in <a href="https://www.figma.com/file/8aPFF08MIEdi4hkYYAtlww/SL-UX-Design-Figma-(Phase-4)?type=design&node-id=200-37255&mode=design&t=BiK8JF42m7bOfgOD-0"> Figma </a>against Nielsen Norman Group’s heuristic guidelines.
               <ul>
                 <li>We evaluated sets of screens or features by level of severity (0 - no impact to 4 - catastrophic) </li>
                 <li>Then the team voted on items to flag for UXD team and sent recommendations</li>
                 <li>More info can be found <a href="https://www.nngroup.com/aricles/ten-usability-heurisics](https://www.nngroup.com/ar1cles/ten-usability-heuris1cs/">here:</a> </li><br>
               </ul>
-            Findings:
+            <b>Findings: </b>
               <ul>
                <li>The most frequently violated heuristic was Consistency and Standards (40% of the 62 issues found)</li>
                 <li>Violations tended to be minor (level 2 at 35%) or major (level 3 at 35%) usability issues; rarely catastrophic (level 4 at 5%)</li>
@@ -207,7 +242,7 @@ h2, h3 {
                 <li>Of the 62 items flagged, 16 (26%) were voted most important for UXD team to address </li>
               </ul> </p> 
 
-   <br><br><br>
+   <br><br>
     <div class="w3-row w3-padding-32">
       <h4 class="w3-opacity"><i>User Interview/Moderated Usability Testing</i></h4>
         <p class="w3-justify"> <b> Research Goals:</b> <br>
@@ -265,11 +300,13 @@ h2, h3 {
 
         <b>Matching preference exercise: </b> <br>
         We asked participants to
+        <ul>
         <li>Consider 7 criteria in randomized order that could be used for matching mentors with mentees
         <li>Rearrange those criteria from the most important to the least important as factors for creating a match
-        <li>Share their reasoning for the rankings as they placed the labels </p> <br>
+        <li>Share their reasoning for the rankings as they placed the labels 
+        </ul> <br>
 
-        <b>Findings</b> <br>
+        <b> Key Findings:</b> <br>
          <p> Themes, Findings, and Actionable Insights are presented in order of priority </p>
               <img src="web portfolio/theme1.png" class="w3-round" alt="Random Name" style="width:90%"> <!-- Image of findings slides???-->
               <img src="web portfolio/theme2.png" class="w3-round" alt="Random Name" style="width:90%">
@@ -298,8 +335,9 @@ h2, h3 {
             <li>Sexual orientation </li>
             <li>Gender </li>
           </ul>
+          <br>
 
-          <b> Findings </b><br>
+          <b> Key Findings: </b><br>
           
           In the moderated usability testing activity, <b>Professional Industry</b> and <b>Focus Area</b> were tied for the most important criteria in the matching process. <br>
           In the unmoderated survey, <b>Professional Industry</b> and <b>Focus Area</b> were ranked as the top 1 and 2 most important criteria, respectively. <br> <br>
@@ -327,31 +365,31 @@ h2, h3 {
           </ul> 
        </p>
 
- <br><br><br>
+ <br><br>
     <div class="w3-row w3-padding-32">
       <h4 class="w3-opacity"><i>Next Steps</i></h4>
         <p class="w3-justify">
 
           <ol>
-          <li>Identity Label Research - Implement in UXD and UXW designs.
-          <li> Heuristic Evaluation - Pass to UXD and UXW for implementation.
-          <li>User Personas - Revise to reflect findings.
+          <li>Identity Label Research - Implement in UXD and UXW designs. </li>
+          <li> Heuristic Evaluation - Pass to UXD and UXW for implementation. </li>
+          <li>User Personas - Revise to reflect findings. </li>
             <ul>
               <li>The mentor persona received the most revision because this phase research focused on the mentor experience.
               <li>The mentee persona includes recommendations for future phases, including potentially breaking this persona into two personas, and beginning desk research into mental health benefits of mentoring.
               <li>Note that the UXW team found user personas valuable for updating the content tone. Communicate with UXW to determine any additional needs from the personas, and continue to update them.
               </ul>
-          <li>User Interviews and Usability Tests - See recommendations [above](https://www.notion.so/UX-Research-fbd938ffa1af4505b8249e99f3d287be?pvs=21).
+          <li>User Interviews and Usability Tests - See recommendations above.
             <ul>
               <li>One area we were not able to address in this phase of usability testing is the product goal of an onboarding process that takes no longer than 3 minutes. Unmoderated, timed testing of the onboarding flow should be a research priority after recommendations have been implemented by XFN teams. </li>
               </ul>
-          <li>Matching Preferences Survey - See key findings [above](https://www.notion.so/UX-Research-fbd938ffa1af4505b8249e99f3d287be?pvs=21).
+          <li>Matching Preferences Survey - See key findings above.
             <ul>
               <li>The survey findings matched the UI/UT findings in that participants see industry and mentoring focus area as the most important elements for matching. Other elements, like mentee age and race and ethnicity, changed ranking, suggesting more research may be needed about how users prioritize those factors.
                 <ul>
                   <li>In tandem with this, work with Dev to determine what information is needed to inform the matching algorithm </li>
                 </ul>
-              <li>Consider groups needing further research:
+              <li>Consider groups needing further research: 
                 <ul>
                   <li>Extending data collection to mentor demographics not covered in existing sample population </li>
                   <li>Shift the survey to focus on mentee matching preferences </li>
@@ -360,18 +398,22 @@ h2, h3 {
               <div class="w3-row w3-padding-32">
 
     </div>
-  </div>
+  </li>
 
+ 
 
 
 
   <!-- Project 2 -->
-  <div id="Project2" class="tabcontent">
+   <li class="tab">
+      <input type="radio" name="tabs" id="tab2" />
+      <label for="tab2">Project 2: Active Wellness App</label>   
+      <div id="tab-content2" class="content">
 
   <div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="project2">
     <h2 class="w3-wide">Project 2: Active Wellness Center </h2>
-      <p class="w3-justify">Active Wellness Center is a gym located in Northern California. They offer personal weight and cardio equipment, pools, group classes, a spin facility, spa services, and personal trainer sessions.  <br>
-        The gym provides members with an app designed to help them search and sign up for group classes. <br>
+      <p class="w3-justify">Active Wellness Center is a gym located in Northern California. They offer personal weight and cardio equipment, pools, group classes, a spin facility, spa services, and personal trainer sessions.
+        The gym provides members with an app designed to help them search and sign up for group classes. <br><br>
         The goal of this research is to learn more about the behaviors and needs of Active Wellness Center members. I am looking to find the frustrations members face and in what ways the Active Wellness Center App could help alleviate these frustrations and facilitate a positive gym experience. I am specifically interested in learning about the member’s interests and behaviors regarding the group classes offered by the gym. </p> <br>
 
       <h4 class="w3-opacity"><i>Key Research Questions</i></h4>
@@ -383,11 +425,10 @@ h2, h3 {
         <li>What motivates gym members to attend group classes and/or make reservations within the app? </li>
         <li>In what ways could the members currently not using the app benefit from doing so? </li>
         <li>Do members share frustrations about the gym that the app would help? 
-        </uL> </p>
+        </uL> </p> <br><br>
          
-    
-    <div class="w3-row w3-padding-32" style = "text-align: center;">
       <h4 class="w3-opacity"><i>Chosen Methods</i></h4>
+    <div class="w3-row w3-padding-32" style = "text-align: center;">
       <div class="w3-third">
         <p>Interviews</p>
         <img src="Web portfolio/850331.png" class="w3-round w3-margin-bottom" alt="Interviews" style="width:40%">
@@ -401,7 +442,7 @@ h2, h3 {
         <img src="Web portfolio//2222151.png" class="w3-round" alt="Survey" style="width:40%">
       </div>
     </div>
-    <div class="w3-row w3-padding-32" style = "text-align: center;">
+    <div class="w3-row w3-padding-32" alt="Landing Page Tests" style = "text-align: center;">
       <div class="w3-third">
         <p>Landing Page Tests</p>
         <img src="Web portfolio/1185283.png" class="w3-round w3-margin-bottom" alt="Landing Page Tests" style="width:40%">
@@ -415,9 +456,9 @@ h2, h3 {
         <img src="Web portfolio/2664673.png" class="w3-round" alt="Usability Study" style="width:40%">
       </div>
     </div>
-    
+    <br><br>
 
-     <img src="web portfolio/Activewellness.png" class="w3-round" alt="Usability Study" style="width:40%">
+     
       <h4 class="w3-opacity"><i>Recruiting Criteria</i></h4>
    
           <ul style="list-style-type:disc">
@@ -428,8 +469,8 @@ h2, h3 {
             <li>Include current app users and non app users </li> <br>
             <li>Devices: Mobile phones (IPhone and Android Users) </li>
           </ul>
-
-    
+<img src="web portfolio/Activewellness.png" class="w3-round" alt="Usability Study" style="width:40%">
+    <br><br>
        
 
       <h4 class="w3-opacity"><i>Interview Insight </i></h4>
@@ -443,7 +484,8 @@ h2, h3 {
 
             <li>For example: one participant who was an avid runner had found herself benched from running because of a hip injury. She was interested in finding alternative ways to exercise however she wanted to make sure she wasn’t going to take a class that was going to further hurt her hip. </li>
           </ul>
-        </p>
+        </p> 
+        <br><br>
 
       <h4 class="w3-opacity"><i>Survey Insights </i></h4>
        <p class="w3-justify text-align left"> 
@@ -454,14 +496,17 @@ h2, h3 {
             <li>The majority of app users expressed that they have become frustrated while using the app. 
          </ul> 
        </p>
+       <br><br>
 
       <h4 class="w3-opacity"><i>Empathy Map </i></h4>
         <p class="w3-justify"> This map demonstrates the perspective of a Synergy App user based on the initial surveys and interviews that were done. It shows what a typical member does, feels, thinks, hears, and sees. It also highlights some pain points a member runs into and also value they gain from using the app and the gym. <br>
         <img src="Web portfolio/empathymap.png" class="w3-round" alt="Empathy Map" style="width:90%; text-align:center"></p>
+        <br><br>
 
       <h4 class="w3-opacity"><i>User Flow </i></h4>
         <p class="w3-justify"> Because several members spoke about the effort to start an account to start using the app seemed like too much work, I thought it would be smart to create a user flow of this task. <br> <br>
          <img src="web portfolio/UserFlow.png" class="w3-round" alt="Usability Study" style="width:90%"></p>
+         <br><br>
 
       <h4 class="w3-opacity"><i>Landing Page feedback</i></h4>
         <p class="w3-justify"> I developed a landing page showcasing the key features of the Synergy gym health app. Following that, I conducted various tests on both the landing page and the concepts presented within it. I gathered qualitative feedback and conducted both a first-click test and a 10-second test. <br> <br>
@@ -521,22 +566,30 @@ h2, h3 {
         <li>Ability to talk to and get advice from personal trainers through the app </li>
         </ul></p>
 
+    </div>
   </div>
-</div>
+    </li>
+
 
 
   <!-- The Contact Section -->
+  <li class="tab">
+      <input type="radio" name="tabs" id="tab3"/>
+      <label for="tab3">Contact Me</label>  
+
+      <div id="tab-content3" class="content">
   <div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="contact">
     <h2 class="w3-wide w3-center">CONTACT</h2>
     <!--<p class="w3-opacity w3-center"><i>########</i>
     <div class="w3-row w3-padding-32">-->
       <div class="w3-center"> 
         <i class="fa fa-map-marker" style="width:30px"></i> Petaluma, US <br>
-        <i class="fa fa-phone" style="width:30px"></i> Phone: 707 889 0255 <br>
+        <i class="fa fa-phone" style="width:30px"></i> Phone: 707 889-0255 <br>
         <i class="fa fa-envelope" style="width:30px"> </i> Email: cassidydreiff@gmail.com<br>
       </div>
     </div>
-
+    </div>
+  </li>
   
 <!-- End Page Content -->
 </div>
