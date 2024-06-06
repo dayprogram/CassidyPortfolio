@@ -14,7 +14,7 @@ body {
 }
 
 ul{
-  text-align: right;
+  text-align: left;
 }
 
 w3-opacity {
@@ -30,6 +30,42 @@ h2, h3 {
 
 
 .mySlides {display: none}
+
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
 </style>
 
 
@@ -43,23 +79,12 @@ h2, h3 {
     <a href="#" class="w3-bar-item w3-button w3-padding-large">HOME</a>
     <a href="#projects" class="w3-bar-item w3-button w3-padding-large w3-hide-small">PROJECTS</a>
     <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hide-small">CONTACT</a>
-   
     </div>
-    <!--<a href="javascript:void(0)" class="w3-padding-large w3-hover-red w3-hide-small w3-right"><i class="fa fa-search"></i></a> -->
   </div>
-
-<!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) 
-<div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
-  <a href="#band" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">BAND</a>
-  <a href="#tour" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">TOUR</a>
-  <a href="#contact" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">CONTACT</a>
-  <a href="#" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">MERCH</a>
-</div> -->
 
 
 <!-- Page content -->
 <div class="w3-content" style="max-width:2000px;margin-top:46px">
-
 
 
   <!-- Intro Section -->
@@ -67,270 +92,282 @@ h2, h3 {
     <h2 class="w3-wide">Cassidy Day Reiff</h2>
     <p class="w3-opacity"><i>UX Researcher</i></p>
     <p class="w3-justify">A University of California, Irvine cognitive science graduate, I am currently seeking roles as a UX Research Associate. My passion lies in exploring the nuances of human behavior through research. Equipped with a solid foundation in research methodologies and adept interpersonal skills, I aim to provide comprehensive support to teams across project lifecycles. I am excited to discover insightful contributions that propel product innovation and enhance user satisfaction. </p>
-    
   </div>
 
   <!-- The Projects Banner -->
-    <div class="w3-container w3-content w3-padding-94" style="max-width:2000px">
+   <div class="w3-container w3-content w3-padding-94" style="max-width:2000px">
       <div class="w3-bar w3-black" id="projects">
       <h2 class="w3-wide w3-center">Find My Projects Below</h2>
-  </div>
+    </div>
+
+  <div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'Project1')">Project 1: Thrive Out Loud</button>
+  <button class="tablinks" onclick="openCity(event, 'Project2')">Project 2: Active Wellness App</button>
+</div>
 
 
       
   <!-- Project 1 -->
-  <div class="w3-container w3-content  w3-padding-64" style="max-width:800px" id="project1">
-    <h2 class="w3-wide">Project 1: Thrive Out Loud</h2>
-    <p class="w3-justify">Thrive Out Loud, a platform under development by Sean's Legacy, aims to empower minority LGBTQIA+ youth in their academic and extracurricular pursuits. Serving as a professional mentorship platform, Thrive Out Loud seeks to connect LGBTQ+ mentees with LGBTQ+ mentors who can offer valuable guidance and support. </p>
-    <div class="w3-third">
-        <p>The Team!</p>
-        <img src="web portfolio/UXRteam.PNG" class="w3-round w3-margin-bottom" alt="Random Name" style="width:300%"> <!-- TOL Pic -->
-      </div></p>
+  <div id="Project1" class="tabcontent">
 
-    <div class="w3-row w3-padding-32">
-      
-     <!--  <div class="w3-third">
-        <p>Name</p>
-        <img src="web portfolio/Seanlegacy.png" class="w3-round w3-margin-bottom" alt="Random Name" style="width:90%"> 
-      </div>
-     
+    <div class="w3-container w3-content  w3-padding-64" style="max-width:800px" id="project1">
+      <h2 class="w3-wide">Project 1: Thrive Out Loud</h2>
+      <p class="w3-justify">Thrive Out Loud, a platform under development by Sean's Legacy, aims to empower minority LGBTQIA+ youth in their academic and extracurricular pursuits. Serving as a professional mentorship platform, Thrive Out Loud seeks to connect LGBTQ+ mentees with LGBTQ+ mentors who can offer valuable guidance and support. </p>
       <div class="w3-third">
-        <p>Name</p>
-        <img src="web portfolio/TOLpage.png" class="w3-round" alt="Random Name" style="width:90%">
-      </div>-->
-    </div> 
+          <p>The Team!</p>
+          <img src="web portfolio/UXRteam.PNG" class="w3-round w3-margin-bottom" alt="Random Name" style="width:300%"> <!-- TOL Pic -->
+        </div></p>
 
-    <p class="w3-opacity"><i>Overview</i></p>
-    <p class="w3-justify">The overarching goal of our research in this phase is to:
+      <div class="w3-row w3-padding-32">
+        
+       <!--  <div class="w3-third">
+          <p>Name</p>
+          <img src="web portfolio/Seanlegacy.png" class="w3-round w3-margin-bottom" alt="Random Name" style="width:90%"> 
+        </div>
+       
+        <div class="w3-third">
+          <p>Name</p>
+          <img src="web portfolio/TOLpage.png" class="w3-round" alt="Random Name" style="width:90%">
+        </div>-->
+      </div> 
 
-     <b>Identify key elements that contribute to a welcoming and intuitive experience for potential mentor users.
-     Uncover potential usability barriers encountered by new mentor users during the sign-up process.
-     Explore the perspectives and preferences of mentors in the matching process. </b> </p>
+      <p class="w3-opacity"><i>Overview</i></p>
+      <p class="w3-justify">The overarching goal of our research in this phase is to:
 
-    <div class="w3-row w3-padding-32">
-      <h3 class="w3-bold"><i>Generative Research</i></h3>
-        <h4 class="w3-opacity"><i>Identity Label Research</i></h4>
-          <p class="w3-justify">Previous UX Research found that potential Thrive Out Loud (TOL) users want clear, inclusive wording when asked identity questions. This label identity research was conducted to offer guidance on how to phrase questions and provide a comprehensive set of answer options. This report synthesizes industry norms and provides the recommendations on asking gender, sexual orientation, and race/ethnicity. <br> <br>
+       <b>Identify key elements that contribute to a welcoming and intuitive experience for potential mentor users.
+       Uncover potential usability barriers encountered by new mentor users during the sign-up process.
+       Explore the perspectives and preferences of mentors in the matching process. </b> </p>
 
-        <b>Method: </b>
-          <uL>
-            <li>UXR Lead initiate collaboration with UXW </li>
-        <li>4 UXR apprentices and 3 UXW apprentices collected data from competitor platforms and authorities on their chosen identity category: gender, sexual orientation, race/ethnicity. Data was then analyzed via a SWOT analysis</li>
-        <li>UXR team synthesized key takeaways and recommendations</li>
-        </ul> 
+      <div class="w3-row w3-padding-32">
+        <h3 class="w3-bold"><i>Generative Research</i></h3>
+          <h4 class="w3-opacity"><i>Identity Label Research</i></h4>
+            <p class="w3-justify">Previous UX Research found that potential Thrive Out Loud (TOL) users want clear, inclusive wording when asked identity questions. This label identity research was conducted to offer guidance on how to phrase questions and provide a comprehensive set of answer options. This report synthesizes industry norms and provides the recommendations on asking gender, sexual orientation, and race/ethnicity. <br> <br>
+
+          <b>Method: </b>
+            <uL>
+              <li>UXR Lead initiate collaboration with UXW </li>
+          <li>4 UXR apprentices and 3 UXW apprentices collected data from competitor platforms and authorities on their chosen identity category: gender, sexual orientation, race/ethnicity. Data was then analyzed via a SWOT analysis</li>
+          <li>UXR team synthesized key takeaways and recommendations</li>
+          </ul> 
+          <br>
+
+          SWOT analysis and collaborative work found <a href="https://www.figma.com/file/WY2evDkH4qop5VFPHtEdC7/Phase-4%3A-Sean's-Legacy-UX-Research?type=whiteboard&node-id=397-2208&t=Wycyz8DwcJ6m8XCd-4">here:</a> <br> <br>
+
+          <b>Key Findings: </b>
+          <ul>
+          <li>Allow TOL users to select multiple response options, ideally without a limit</li>
+            <ul>
+              <li>Providing an LGBTQIA+ audience with an elaborate list of identity labels “allows sexual minorities to choose the identity label that best matches their identity” vs not selecting at all ([Gallup](https://news.gallup.com/opinion/methodology/259457/measure-lgbt-population.aspx))</li>
+            </ul>
+          <li>The options of “no label” (gender/sexual orientation), “not sure,” and “not listed (free text)”* have been commonly used across different platforms". These options are fundamentally different from one another and all need to be included </li>
+            <ul>
+              <li>“There is no one way to be LGBTQ, nor is there one way to describe LGBTQ people” ([Glaad](https://glaad.org/reference/)). “Not listed (free text)” write in option gives TOL users the ability to further self identify</li>
+            </ul>
+          <li>Support TOL users in their evolving identity: clearly communicate the ability to edit selections</li>
+          <li>Consider wording the questions in parallel way for all three identity categories (gender, sexual orientation, ethnicity and race) to reduce cognitive load
+          <li>Consider allowing mentees to efficiently answer profile creation questions alongside their equivalent matching QRE questions</li>
+          <li>If users are able to skip a question, remind them to go back to it at a later time</li>
+          <li>Identity questions have the potential to serve as a valuable hub for resources and information such as: definitions, links to sources, FAQ page, guidance and support for users</li>
+          </ul>
+
+          Full report can be found <a href="https://docs.google.com/presentation/d/1Ex9_N39thsu9PPivXpwo3ehEQUf0KGyqDjivV-bHbKk/edit#slide=id.g2c24bbdb176_0_148">here:</a> </p>
+
+      <div class="w3-row w3-padding-32" style ="text-align: center">
+        <p>Proposed Language </p> 
+
+        <div class="w3-third">
+          <p>Gender</p>
+          <img src="web portfolio/proposedgender.png" class="w3-round w3-margin-bottom" alt="Random Name" style="width:95%"> 
+        </div>
+        <div class="w3-third">
+          <p>Sexual Orientation</p>
+          <img src="web portfolio/proposedsexual.png" class="w3-round w3-margin-bottom" alt="Random Name" style="width:95%">
+        </div>
+        <div class="w3-third">
+          <p>Race/Ethnicity</p>
+          <img src="web portfolio/proposedrace.png" class="w3-round" alt="Random Name" style="width:95%">
+        </div>
+      </div>
         <br>
 
-        SWOT analysis and collaborative work found <a href="https://www.figma.com/file/WY2evDkH4qop5VFPHtEdC7/Phase-4%3A-Sean's-Legacy-UX-Research?type=whiteboard&node-id=397-2208&t=Wycyz8DwcJ6m8XCd-4">here:</a> <br> <br>
+ <br><br><br>
+       <h3 class="w3-bold"><i>Evaluative Research</i></h3>
+         <h4 class="w3-opacity"><i>Heuristic Evaluation</i></h4>
+            <p>To gain a general understanding of the status of the current designs, the team evaluated screens the UXD team provided in [Figma](https://www.figma.com/file/8aPFF08MIEdi4hkYYAtlww/SL-UX-Design-Figma-(Phase-4)?type=design&node-id=200-37255&mode=design&t=BiK8JF42m7bOfgOD-0) against Nielsen Norman Group’s heuristic guidelines.
+              <ul>
+                <li>We evaluated sets of screens or features by level of severity (0 - no impact to 4 - catastrophic) </li>
+                <li>Then the team voted on items to flag for UXD team and sent recommendations</li>
+                <li>More info can be found <a href="https://www.nngroup.com/aricles/ten-usability-heurisics](https://www.nngroup.com/ar1cles/ten-usability-heuris1cs/">here:</a> </li><br>
+              </ul>
+            Findings:
+              <ul>
+               <li>The most frequently violated heuristic was Consistency and Standards (40% of the 62 issues found)</li>
+                <li>Violations tended to be minor (level 2 at 35%) or major (level 3 at 35%) usability issues; rarely catastrophic (level 4 at 5%)</li>
+                <li>Screens with the most violations were profile creation and editing, onboarding, and reporting</li>
+                <li>Of the 62 items flagged, 16 (26%) were voted most important for UXD team to address </li>
+              </ul> </p> 
 
-        <b>Key Findings: </b>
+   <br><br><br>
+    <div class="w3-row w3-padding-32">
+      <h4 class="w3-opacity"><i>User Interview/Moderated Usability Testing</i></h4>
+        <p class="w3-justify"> <b> Research Goals:</b> <br>
+       
+          <ul>
+            <li> Evaluate the landing page's effectiveness in facilitating user understanding of and comfort with the mentorship platform. </li>
+            <li> Determine the essential information required by potential mentors on the homepage of Thrive Out Loud before proceeding with the sign-up process. </li>
+            <li>Evaluate the usability of the mentor sign-up processes within our prototype. Identify strategies to optimize the sign-up flow with the aim of increasing user engagement and completion rates. </li>
+            <li>Identify user experiences and potential pain points during the sign-up process. </li>
+            <li>Investigate mentor preferences regarding the approach to matching, exploring whether they favor passive waiting or proactive initiative-taking. </li> <br>
+          </ul>
+
+          <div> <img src="web portfolio/TOL.png" class="w3-round" alt="Random Name" style="width:100%"> </div> <br><!-- Image of landing page and qre matching screens-->
+
+          <b>Participant inclusion criteria (Mentors) </b>
+          <ul>
+          <li>Identify as on the LGBTQIA+ spectrum </li>
+          <li>Have prior experience in either a formal or informal mentorship relationship </li>
+          <ul>
+              <li>Formal mentorship, such as participation in mentorship platforms like ADP List, formal work or school mentorship programs, etc. </li>
+              <li>Informal mentorship, such as a college advisor relationship </li>
+            </ul>
+          <li>Have prior professional experience, including work experience or enrolled in a training program/schooling program </li>
+          <li>Be aged 18 or older </li>
+          <li>Reside within the United States </li>
+          </ul>
+           
+           <b>Priority Criteria </b>
+          <ul>
+          <li>Have mentor experience </li>
+          <li>Have a minimum of 5 years of professional experience </li>
+              <li>Reason: Professional Mentor Eligibility on SL website “If you are a member of the LGBTQIA+ community with a minimum of 5 years of professional experience, we need your help!”. </li>
+          <li>Age group not being 26-35. </li>
+            <ul>
+              <li>Reason: In Phase 2 they interviewed from Mentor POV, 6 out of 7 participants are in the 26-35 age group </li>
+            </ul>
+          <li>Prioritize underrepresented race/ethnicity groups </li>
+            <ul>
+              <li>Reason: Diversify Phase 2’s demographic coverage </li>
+            </ul> </ul> <br>
+
+        <b>Session Details:</b>
         <ul>
-        <li>Allow TOL users to select multiple response options, ideally without a limit</li>
-          <ul>
-            <li>Providing an LGBTQIA+ audience with an elaborate list of identity labels “allows sexual minorities to choose the identity label that best matches their identity” vs not selecting at all ([Gallup](https://news.gallup.com/opinion/methodology/259457/measure-lgbt-population.aspx))</li>
-          </ul>
-        <li>The options of “no label” (gender/sexual orientation), “not sure,” and “not listed (free text)”* have been commonly used across different platforms". These options are fundamentally different from one another and all need to be included </li>
-          <ul>
-            <li>“There is no one way to be LGBTQ, nor is there one way to describe LGBTQ people” ([Glaad](https://glaad.org/reference/)). “Not listed (free text)” write in option gives TOL users the ability to further self identify</li>
-          </ul>
-        <li>Support TOL users in their evolving identity: clearly communicate the ability to edit selections</li>
-        <li>Consider wording the questions in parallel way for all three identity categories (gender, sexual orientation, ethnicity and race) to reduce cognitive load
-        <li>Consider allowing mentees to efficiently answer profile creation questions alongside their equivalent matching QRE questions</li>
-        <li>If users are able to skip a question, remind them to go back to it at a later time</li>
-        <li>Identity questions have the potential to serve as a valuable hub for resources and information such as: definitions, links to sources, FAQ page, guidance and support for users</li>
+          <li>Moderated, remote, 45-minute, in-depth interviews (IDIs) & usability test </li>
+          <li>The Sean’s Legacy team was able to provide an incentive budget of $15 per participant. This was awarded to participants who completed their sessions via an Amazon gift card. </li>
         </ul>
 
-        Full report can be found <a href="https://docs.google.com/presentation/d/1Ex9_N39thsu9PPivXpwo3ehEQUf0KGyqDjivV-bHbKk/edit#slide=id.g2c24bbdb176_0_148">here:</a> </p>
+        <b>Usability tasks conducted:</b>
+        <ul>
+        <li>Landing Page: "A friend recommends you to mentor others on Thrive Out Loud and you want to learn more about the organization" </li>
+        <li>Become a mentor → How it works: "You want to learn more about joining TOL as a mentor" </li>
+        <li>Sign up: "Walk me through how you would join this platform as a mentor" </li>
+        <li>Mentor Onboarding Questions: "You are ready to move forward and share more about your background" </li>
+        </ul>
 
-    <div class="w3-row w3-padding-32" style ="text-align: center">
-      <p>Proposed Language </p> 
+        <b>Matching preference exercise: </b> <br>
+        We asked participants to
+        <li>Consider 7 criteria in randomized order that could be used for matching mentors with mentees
+        <li>Rearrange those criteria from the most important to the least important as factors for creating a match
+        <li>Share their reasoning for the rankings as they placed the labels </p> <br>
 
-      <div class="w3-third">
-        <p>Gender</p>
-        <img src="web portfolio/proposedgender.png" class="w3-round w3-margin-bottom" alt="Random Name" style="width:95%"> 
-      </div>
-      <div class="w3-third">
-        <p>Sexual Orientation</p>
-        <img src="web portfolio/proposedsexual.png" class="w3-round w3-margin-bottom" alt="Random Name" style="width:95%">
-      </div>
-      <div class="w3-third">
-        <p>Race/Ethnicity</p>
-        <img src="web portfolio/proposedrace.png" class="w3-round" alt="Random Name" style="width:95%">
-      </div>
+        <b>Findings</b> <br>
+         <p> Themes, Findings, and Actionable Insights are presented in order of priority </p>
+              <img src="web portfolio/theme1.png" class="w3-round" alt="Random Name" style="width:90%"> <!-- Image of findings slides???-->
+              <img src="web portfolio/theme2.png" class="w3-round" alt="Random Name" style="width:90%">
+              <img src="web portfolio/theme3.png" class="w3-round" alt="Random Name" style="width:90%">
+              <img src="web portfolio/theme3.png" class="w3-round" alt="Random Name" style="width:90%">
+              <img src="web portfolio/designrecs.png" class="w3-round" alt="Random Name" style="width:90%"> <br>
+
+
+  <br><br><br>
+    <h4 class="w3-opacity"><i>Matching Preference Survey</i></h4>
+        <p class="w3-justify">An unmoderated survey was sent out to collect information about personal thoughts on mentor preferences for matching with potential mentees. The purpose of the survey was to seek quantitative validation of findings from the matching preference exercise in our qualitative research. <br>
+
+          Using the same inclusion criteria as our user interviews/usability testing, the survey collected over 20 qualified responses. <br>
+          More than 80% of respondents had 5+ years of work experience and almost half were previously mentors. <br>
+          All respondents consented to be contacted to participate in future research. <br> <br>
+
+          Unmoderated survey participants received the following prompt and instructions:  “As a mentor, what factors are most important for you to match with a mentee?  Rank the labels (from 1-7) to show the most to least important factors for mentoring compatibility.” <br> <br>
+
+          The labels shown in randomized order were: 
+          <ul>
+            <li>Mentee’s age </li>
+            <li>Language </li>
+            <li>Professional industry </li>
+            <li>Focus area mentorship (work, study, career change, etc.) </li>
+            <li>Race and ethnicity </li>
+            <li>Sexual orientation </li>
+            <li>Gender </li>
+          </ul>
+
+          <b> Findings </b><br>
+          
+          In the moderated usability testing activity, <b>Professional Industry</b> and <b>Focus Area</b> were tied for the most important criteria in the matching process. <br>
+          In the unmoderated survey, <b>Professional Industry</b> and <b>Focus Area</b> were ranked as the top 1 and 2 most important criteria, respectively. <br> <br>
+
+          Unmoderated survey participants also received the prompt: “Please explain why your highest ranked factor is considered "most important" for mentoring compatibility.”  The summarized responses are below with a number indicating how many participants ranked that criteria as their #1 ranked factor.  
+          <ul>
+            <li>Professional Industry (9): Mentoring relationships become useful when the mentor and mentee have similar fields. Mentors can have years of experience that they can share to their mentees and provide valuable advice to help them accomplish their goals. </li>
+            <li>Language (7): Mentors and mentees need to be able to communicate clearly. Mentors can guide their mentees if they’re able to communicate in the language they’re most comfortable with. </li>
+            <li>Focus Area (5): It’s important that mentors and mentees are aligned on goals. Mentors want to offer guidance by serving as a resource for specific focus areas.  Mentees want mentorship from people who are experts in their field of interest and share career experiences. </li>
+            <li>Race and Ethnicity (1): A potential mentor is concerned that if a mentee has a different race and ethnicity to them, they may not be able to relate to the mentee in that area, possibly forming a bridge in the relationship. </li>
+          </ul>
+          Lastly, participants were asked: “Other than the options already listed, what other factors, if any, do you think are important to consider for mentoring compatibility? 
+          <ul>
+            <li>Personality Traits (4) </li>
+            <li>Goals for the Mentorship Relationship (3) </li>
+            <li>Interests (2) </li>
+            <li>Location (2) </li>
+            <li>Availability (1) </li>
+            <li>Feedback Style (1) </li>
+            <li>Disabilities (1) </li>
+            <li>Educational Background (1) </li>
+            <li>Social-Economic Status (1) </li>
+            <li>Upbringing or Cultural Background (1) </li>
+            <li>Identifying Hard Nos & Wishlist Items (1) </li>
+          </ul> 
+       </p>
+
+ <br><br><br>
+    <div class="w3-row w3-padding-32">
+      <h4 class="w3-opacity"><i>Next Steps</i></h4>
+        <p class="w3-justify">
+
+          <ol>
+          <li>Identity Label Research - Implement in UXD and UXW designs.
+          <li> Heuristic Evaluation - Pass to UXD and UXW for implementation.
+          <li>User Personas - Revise to reflect findings.
+            <ul>
+              <li>The mentor persona received the most revision because this phase research focused on the mentor experience.
+              <li>The mentee persona includes recommendations for future phases, including potentially breaking this persona into two personas, and beginning desk research into mental health benefits of mentoring.
+              <li>Note that the UXW team found user personas valuable for updating the content tone. Communicate with UXW to determine any additional needs from the personas, and continue to update them.
+              </ul>
+          <li>User Interviews and Usability Tests - See recommendations [above](https://www.notion.so/UX-Research-fbd938ffa1af4505b8249e99f3d287be?pvs=21).
+            <ul>
+              <li>One area we were not able to address in this phase of usability testing is the product goal of an onboarding process that takes no longer than 3 minutes. Unmoderated, timed testing of the onboarding flow should be a research priority after recommendations have been implemented by XFN teams. </li>
+              </ul>
+          <li>Matching Preferences Survey - See key findings [above](https://www.notion.so/UX-Research-fbd938ffa1af4505b8249e99f3d287be?pvs=21).
+            <ul>
+              <li>The survey findings matched the UI/UT findings in that participants see industry and mentoring focus area as the most important elements for matching. Other elements, like mentee age and race and ethnicity, changed ranking, suggesting more research may be needed about how users prioritize those factors.
+                <ul>
+                  <li>In tandem with this, work with Dev to determine what information is needed to inform the matching algorithm </li>
+                </ul>
+              <li>Consider groups needing further research:
+                <ul>
+                  <li>Extending data collection to mentor demographics not covered in existing sample population </li>
+                  <li>Shift the survey to focus on mentee matching preferences </li>
+                </ul>
+            </ol></p>
+              <div class="w3-row w3-padding-32">
+
     </div>
-      <br>
-
-     <h3 class="w3-bold"><i>Evaluative Research</i></h3>
-       <h4 class="w3-opacity"><i>Heuristic Evaluation</i></h4>
-          <p>To gain a general understanding of the status of the current designs, the team evaluated screens the UXD team provided in [Figma](https://www.figma.com/file/8aPFF08MIEdi4hkYYAtlww/SL-UX-Design-Figma-(Phase-4)?type=design&node-id=200-37255&mode=design&t=BiK8JF42m7bOfgOD-0) against Nielsen Norman Group’s heuristic guidelines.
-            <ul>
-              <li>We evaluated sets of screens or features by level of severity (0 - no impact to 4 - catastrophic) </li>
-              <li>Then the team voted on items to flag for UXD team and sent recommendations</li>
-              <li>More info can be found here: [https://www.nngroup.com/aricles/ten-usability-heurisics](https://www.nngroup.com/ar1cles/ten-usability-heuris1cs/) </li><br>
-            </ul>
-          Findings:
-            <ul>
-             <li>The most frequently violated heuristic was Consistency and Standards (40% of the 62 issues found)</li>
-              <li>Violations tended to be minor (level 2 at 35%) or major (level 3 at 35%) usability issues; rarely catastrophic (level 4 at 5%)</li>
-              <li>Screens with the most violations were profile creation and editing, onboarding, and reporting</li>
-              <li>Of the 62 items flagged, 16 (26%) were voted most important for UXD team to address </li>
-            </ul> </p> 
-
-  <div class="w3-row w3-padding-32">
-    <h4 class="w3-opacity"><i>User Interview/Moderated Usability Testing</i></h4>
-      <p class="w3-justify"> <b> Research Goals:</b> <br>
-     
-        <ul>
-          <li> Evaluate the landing page's effectiveness in facilitating user understanding of and comfort with the mentorship platform. </li>
-          <li> Determine the essential information required by potential mentors on the homepage of Thrive Out Loud before proceeding with the sign-up process. </li>
-          <li>Evaluate the usability of the mentor sign-up processes within our prototype. Identify strategies to optimize the sign-up flow with the aim of increasing user engagement and completion rates. </li>
-          <li>Identify user experiences and potential pain points during the sign-up process. </li>
-          <li>Investigate mentor preferences regarding the approach to matching, exploring whether they favor passive waiting or proactive initiative-taking. </li> <br>
-        </ul>
-
-        <div> <img src="web portfolio/TOL.png" class="w3-round" alt="Random Name" style="width:100%"> </div> <br><!-- Image of landing page and qre matching screens-->
-
-        <b>Participant inclusion criteria (Mentors) </b>
-        <ul>
-        <li>Identify as on the LGBTQIA+ spectrum </li>
-        <li>Have prior experience in either a formal or informal mentorship relationship </li>
-        <ul>
-            <li>Formal mentorship, such as participation in mentorship platforms like ADP List, formal work or school mentorship programs, etc. </li>
-            <li>Informal mentorship, such as a college advisor relationship </li>
-          </ul>
-        <li>Have prior professional experience, including work experience or enrolled in a training program/schooling program </li>
-        <li>Be aged 18 or older </li>
-        <li>Reside within the United States </li>
-        </ul>
-         
-         <b>Priority Criteria </b>
-        <ul>
-        <li>Have mentor experience </li>
-        <li>Have a minimum of 5 years of professional experience </li>
-            <li>Reason: Professional Mentor Eligibility on SL website “If you are a member of the LGBTQIA+ community with a minimum of 5 years of professional experience, we need your help!”. </li>
-        <li>Age group not being 26-35. </li>
-          <ul>
-            <li>Reason: In Phase 2 they interviewed from Mentor POV, 6 out of 7 participants are in the 26-35 age group </li>
-          </ul>
-        <li>Prioritize underrepresented race/ethnicity groups </li>
-          <ul>
-            <li>Reason: Diversify Phase 2’s demographic coverage </li>
-          </ul> </ul> <br>
-
-      <b>Session Details:</b>
-      <ul>
-        <li>Moderated, remote, 45-minute, in-depth interviews (IDIs) & usability test </li>
-        <li>The Sean’s Legacy team was able to provide an incentive budget of $15 per participant. This was awarded to participants who completed their sessions via an Amazon gift card. </li>
-      </ul>
-
-      <b>Usability tasks conducted:</b>
-      <ul>
-      <li>Landing Page: "A friend recommends you to mentor others on Thrive Out Loud and you want to learn more about the organization" </li>
-      <li>Become a mentor → How it works: "You want to learn more about joining TOL as a mentor" </li>
-      <li>Sign up: "Walk me through how you would join this platform as a mentor" </li>
-      <li>Mentor Onboarding Questions: "You are ready to move forward and share more about your background" </li>
-      </ul>
-
-      <b>Matching preference exercise: </b> <br>
-      We asked participants to
-      <li>Consider 7 criteria in randomized order that could be used for matching mentors with mentees
-      <li>Rearrange those criteria from the most important to the least important as factors for creating a match
-      <li>Share their reasoning for the rankings as they placed the labels </p>
-
-      <b>Findings</b> <br>
-       <p> Themes, Findings, and Actionable Insights are presented in order of priority </p>
-            <img src="web portfolio/theme1.png" class="w3-round" alt="Random Name" style="width:90%"> <!-- Image of findings slides???-->
-            <img src="web portfolio/theme2.png" class="w3-round" alt="Random Name" style="width:90%">
-            <img src="web portfolio/theme3.png" class="w3-round" alt="Random Name" style="width:90%">
-            <img src="web portfolio/theme3.png" class="w3-round" alt="Random Name" style="width:90%">
-            <img src="web portfolio/designrecs.png" class="w3-round" alt="Random Name" style="width:90%"> <br>
-             
-
-  <h4 class="w3-opacity"><i>Matching Preference Survey</i></h4>
-      <p class="w3-justify">An unmoderated survey was sent out to collect information about personal thoughts on mentor preferences for matching with potential mentees. The purpose of the survey was to seek quantitative validation of findings from the matching preference exercise in our qualitative research. <br>
-
-        Using the same inclusion criteria as our user interviews/usability testing, the survey collected over 20 qualified responses. <br>
-        More than 80% of respondents had 5+ years of work experience and almost half were previously mentors. <br>
-        All respondents consented to be contacted to participate in future research. <br> <br>
-
-        Unmoderated survey participants received the following prompt and instructions:  “As a mentor, what factors are most important for you to match with a mentee?  Rank the labels (from 1-7) to show the most to least important factors for mentoring compatibility.” <br> <br>
-
-        The labels shown in randomized order were: 
-        <ul>
-          <li>Mentee’s age </li>
-          <li>Language </li>
-          <li>Professional industry </li>
-          <li>Focus area mentorship (work, study, career change, etc.) </li>
-          <li>Race and ethnicity </li>
-          <li>Sexual orientation </li>
-          <li>Gender </li>
-        </ul>
-
-        <b> Findings </b><br>
-        
-        In the moderated usability testing activity, <b>Professional Industry</b> and <b>Focus Area</b> were tied for the most important criteria in the matching process. <br>
-        In the unmoderated survey, <b>Professional Industry</b> and <b>Focus Area</b> were ranked as the top 1 and 2 most important criteria, respectively. <br> <br>
-
-        Unmoderated survey participants also received the prompt: “Please explain why your highest ranked factor is considered "most important" for mentoring compatibility.”  The summarized responses are below with a number indicating how many participants ranked that criteria as their #1 ranked factor.  
-        <ul>
-          <li>Professional Industry (9): Mentoring relationships become useful when the mentor and mentee have similar fields. Mentors can have years of experience that they can share to their mentees and provide valuable advice to help them accomplish their goals. </li>
-          <li>Language (7): Mentors and mentees need to be able to communicate clearly. Mentors can guide their mentees if they’re able to communicate in the language they’re most comfortable with. </li>
-          <li>Focus Area (5): It’s important that mentors and mentees are aligned on goals. Mentors want to offer guidance by serving as a resource for specific focus areas.  Mentees want mentorship from people who are experts in their field of interest and share career experiences. </li>
-          <li>Race and Ethnicity (1): A potential mentor is concerned that if a mentee has a different race and ethnicity to them, they may not be able to relate to the mentee in that area, possibly forming a bridge in the relationship. </li>
-        </ul>
-        Lastly, participants were asked: “Other than the options already listed, what other factors, if any, do you think are important to consider for mentoring compatibility? 
-        <ul>
-          <li>Personality Traits (4) </li>
-          <li>Goals for the Mentorship Relationship (3) </li>
-          <li>Interests (2) </li>
-          <li>Location (2) </li>
-          <li>Availability (1) </li>
-          <li>Feedback Style (1) </li>
-          <li>Disabilities (1) </li>
-          <li>Educational Background (1) </li>
-          <li>Social-Economic Status (1) </li>
-          <li>Upbringing or Cultural Background (1) </li>
-          <li>Identifying Hard Nos & Wishlist Items (1) </li>
-        </ul> 
-     </p>
-
-
-  <div class="w3-row w3-padding-32">
-    <h4 class="w3-opacity"><i>Next Steps</i></h4>
-      <p class="w3-justify">
-
-        <ol>
-        <li>Identity Label Research - Implement in UXD and UXW designs.
-        <li> Heuristic Evaluation - Pass to UXD and UXW for implementation.
-        <li>User Personas - Revise to reflect findings.
-          <ul>
-            <li>The mentor persona received the most revision because this phase research focused on the mentor experience.
-            <li>The mentee persona includes recommendations for future phases, including potentially breaking this persona into two personas, and beginning desk research into mental health benefits of mentoring.
-            <li>Note that the UXW team found user personas valuable for updating the content tone. Communicate with UXW to determine any additional needs from the personas, and continue to update them.
-            </ul>
-        <li>User Interviews and Usability Tests - See recommendations [above](https://www.notion.so/UX-Research-fbd938ffa1af4505b8249e99f3d287be?pvs=21).
-          <ul>
-            <li>One area we were not able to address in this phase of usability testing is the product goal of an onboarding process that takes no longer than 3 minutes. Unmoderated, timed testing of the onboarding flow should be a research priority after recommendations have been implemented by XFN teams. </li>
-            </ul>
-        <li>Matching Preferences Survey - See key findings [above](https://www.notion.so/UX-Research-fbd938ffa1af4505b8249e99f3d287be?pvs=21).
-          <ul>
-            <li>The survey findings matched the UI/UT findings in that participants see industry and mentoring focus area as the most important elements for matching. Other elements, like mentee age and race and ethnicity, changed ranking, suggesting more research may be needed about how users prioritize those factors.
-              <ul>
-                <li>In tandem with this, work with Dev to determine what information is needed to inform the matching algorithm </li>
-              </ul>
-            <li>Consider groups needing further research:
-              <ul>
-                <li>Extending data collection to mentor demographics not covered in existing sample population </li>
-                <li>Shift the survey to focus on mentee matching preferences </li>
-              </ul>
-          </ol></p>
-            <div class="w3-row w3-padding-32">
-
   </div>
 
 
 
 
   <!-- Project 2 -->
+  <div id="Project2" class="tabcontent">
+
   <div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="project2">
     <h2 class="w3-wide">Project 2: Active Wellness Center </h2>
       <p class="w3-justify">Active Wellness Center is a gym located in Northern California. They offer personal weight and cardio equipment, pools, group classes, a spin facility, spa services, and personal trainer sessions.  <br>
@@ -468,7 +505,7 @@ h2, h3 {
             </ul>
         </ul>
 
-<br>
+        <br>
         </p>
 
       <h4 class="w3-opacity"><i>Final Thoughts</i></h4>
@@ -485,6 +522,7 @@ h2, h3 {
         </ul></p>
 
   </div>
+</div>
 
 
   <!-- The Contact Section -->
